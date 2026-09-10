@@ -1,23 +1,20 @@
-<!doctype html>
-<html lang="pt-BR">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0d10"><title>Agendar — Barbearia Prime</title><link rel="stylesheet" href="styles.css"></head>
-<body>
-  <div class="demo-banner">Demonstração interativa — nenhum atendimento real será reservado.</div>
-  <nav class="topbar container"><a class="brand" href="index.html"><span class="brand-mark">BP</span><span>Barbearia Prime</span></a><div class="nav-actions"><a class="btn btn-secondary" href="painel.html">Painel da barbearia</a></div></nav>
-  <header class="page-head container"><span class="eyebrow">AGENDAMENTO ONLINE</span><h1>Escolha seu horário</h1><p>Av. Exemplo, 120 — Fortaleza, CE • Seg–Sáb, 09:00–20:00</p></header>
-  <main class="container booking-layout">
-    <section class="panel">
-      <div class="booking-step"><div class="step-title"><b>1</b><h2>Serviço</h2></div><div class="choice-grid" id="serviceGrid"></div></div>
-      <div class="booking-step"><div class="step-title"><b>2</b><h2>Profissional</h2></div><div class="barber-grid" id="barberGrid"></div></div>
-      <div class="booking-step"><div class="step-title"><b>3</b><h2>Data</h2></div><div class="date-grid" id="dateGrid"></div></div>
-      <div class="booking-step"><div class="step-title"><b>4</b><h2>Horário</h2></div><div class="time-grid" id="timeGrid"></div></div>
-      <div class="booking-step"><div class="step-title"><b>5</b><h2>Seus dados</h2></div><div class="input-grid"><div class="field"><label for="customerName">Nome</label><input id="customerName" placeholder="Ex.: João Pedro" autocomplete="name"></div><div class="field"><label for="customerPhone">WhatsApp</label><input id="customerPhone" placeholder="(85) 99999-9999" inputmode="tel" autocomplete="tel"></div></div></div>
-    </section>
-    <aside class="summary"><span class="eyebrow">RESUMO</span><h2>Seu agendamento</h2>
-      <div class="summary-row"><span>Serviço</span><strong id="sumService">—</strong></div><div class="summary-row"><span>Profissional</span><strong id="sumBarber">—</strong></div><div class="summary-row"><span>Data</span><strong id="sumDate">—</strong></div><div class="summary-row"><span>Horário</span><strong id="sumTime">—</strong></div><div class="summary-row summary-total"><span>Total</span><strong id="sumPrice">R$ 0,00</strong></div>
-      <button id="confirmBtn" class="btn btn-primary" style="width:100%;margin-top:16px" disabled>Confirmar horário</button><p class="summary-note">Na versão real, a barbearia receberia a reserva e poderia enviar confirmação pelo WhatsApp.</p>
-    </aside>
-  </main>
-  <div id="modal" class="modal-backdrop" hidden><div class="modal"><div class="success-icon">✓</div><h2>Agendamento criado</h2><p id="modalText"></p><div class="modal-actions"><a class="btn btn-primary" href="painel.html">Ver no painel da barbearia</a><button class="btn btn-secondary" id="closeModal">Fechar</button></div></div></div>
-  <script src="config.js"></script><script src="booking.js"></script>
-</body></html>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0d10"><title>Agendar — Barbearia Prime</title><link rel="stylesheet" href="styles.css"></head><body>
+<div class="demo-banner">Demonstração interativa — pagamentos e reservas são simulados. Não use dados bancários reais.</div>
+<nav class="topbar container"><a class="brand" href="index.html"><span class="brand-mark">BP</span><span>Barbearia Prime</span></a><div class="nav-actions"><a class="btn btn-secondary" href="painel.html">Painel da barbearia</a></div></nav>
+<header class="page-head container"><span class="eyebrow">AGENDAMENTO ONLINE</span><h1>Escolha seu horário</h1><p>Av. Exemplo, 120 — Fortaleza, CE • Seg–Sáb, 09:00–20:00</p></header>
+<main class="container booking-layout"><section class="panel">
+<div class="booking-step"><div class="step-title"><b>1</b><h2>Serviço</h2></div><div class="choice-grid" id="serviceGrid"></div></div>
+<div class="booking-step"><div class="step-title"><b>2</b><h2>Profissional</h2></div><div class="barber-grid" id="barberGrid"></div></div>
+<div class="booking-step"><div class="step-title"><b>3</b><h2>Data</h2></div><div class="date-grid" id="dateGrid"></div></div>
+<div class="booking-step"><div class="step-title"><b>4</b><h2>Horário</h2></div><div class="time-grid" id="timeGrid"></div></div>
+<div class="booking-step"><div class="step-title"><b>5</b><h2>Seus dados</h2></div><div class="input-grid"><div class="field"><label for="customerName">Nome</label><input id="customerName" placeholder="Ex.: João Pedro" autocomplete="name"></div><div class="field"><label for="customerPhone">WhatsApp</label><input id="customerPhone" placeholder="(85) 99999-9999" inputmode="tel" autocomplete="tel"></div></div></div>
+<div class="booking-step"><div class="step-title"><b>6</b><h2>Forma de pagamento</h2></div><div class="payment-grid"><button class="payment-choice selected" data-payment="pix"><span class="payment-tag">RECOMENDADO</span><strong>Pix</strong><small>Sinal de 30% para reservar</small></button><button class="payment-choice" data-payment="card"><strong>Cartão</strong><small>Pagamento total online</small></button><button class="payment-choice" data-payment="local"><strong>No local</strong><small>Pague após o atendimento</small></button></div><p class="safe-note">Na demo, nenhum pagamento é processado. O Pix, cartão e aprovação existem apenas para demonstrar o fluxo comercial.</p></div>
+</section>
+<aside class="summary"><span class="eyebrow">RESUMO</span><h2>Seu agendamento</h2><div class="summary-row"><span>Serviço</span><strong id="sumService">—</strong></div><div class="summary-row"><span>Profissional</span><strong id="sumBarber">—</strong></div><div class="summary-row"><span>Data</span><strong id="sumDate">—</strong></div><div class="summary-row"><span>Horário</span><strong id="sumTime">—</strong></div><div class="summary-row"><span>Pagamento</span><strong id="sumPayment">Pix • sinal de 30%</strong></div><div class="summary-row summary-total"><span>Total</span><strong id="sumPrice">R$ 0,00</strong></div><div class="summary-paynow" id="payNowBox" hidden><div class="summary-row" style="border:0;padding:0"><span>Pagar agora</span><strong id="sumPayNow">R$ 0,00</strong></div></div><button id="confirmBtn" class="btn btn-primary" style="width:100%;margin-top:16px" disabled>Continuar</button><p class="summary-note">Uma versão comercial poderia exigir um sinal para reduzir faltas e confirmar o horário automaticamente após o pagamento.</p></aside></main>
+
+<div id="paymentModal" class="modal-backdrop" hidden><div class="modal"><div class="payment-modal-head"><div><span class="eyebrow">CHECKOUT DEMONSTRATIVO</span><h2 id="paymentTitle">Pagamento</h2></div><div class="payment-amount" id="paymentAmount">R$ 0,00</div></div>
+<div id="pixArea"><p>Escaneie o QR fictício ou use o código demonstrativo abaixo.</p><div class="fake-qr" id="fakeQr" aria-label="QR Code fictício"></div><div class="pix-code" id="pixCode">00020126-DEMO-CADEIRA85-PIX-NAO-VALIDO-52040000</div><button class="btn btn-secondary" id="copyPix" style="width:100%;margin-top:9px">Copiar código</button></div>
+<div id="cardArea" hidden><p class="safe-note"><strong>Não use cartão real.</strong> Digite qualquer número fictício com pelo menos 12 dígitos. Nenhum dado é transmitido ou armazenado.</p><div class="card-grid"><div class="field full"><label>Número do cartão</label><input id="cardNumber" inputmode="numeric" placeholder="4242 4242 4242 4242" autocomplete="off"></div><div class="field"><label>Validade</label><input placeholder="12/30" autocomplete="off"></div><div class="field"><label>CVV</label><input placeholder="123" inputmode="numeric" autocomplete="off"></div><div class="field full"><label>Nome fictício</label><input placeholder="CLIENTE DEMO" autocomplete="off"></div></div></div>
+<div class="modal-actions"><button class="btn btn-primary" id="payDemoBtn">Simular pagamento aprovado</button><button class="btn btn-secondary" id="closePayment">Voltar</button></div></div></div>
+<div id="modal" class="modal-backdrop" hidden><div class="modal"><div class="success-icon">✓</div><h2>Agendamento criado</h2><p id="modalText"></p><div class="modal-actions"><a class="btn btn-primary" href="painel.html">Ver no painel da barbearia</a><button class="btn btn-secondary" id="closeModal">Fechar</button></div></div></div>
+<script src="config.js"></script><script src="booking.js"></script></body></html>

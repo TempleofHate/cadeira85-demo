@@ -1,77 +1,35 @@
-const Cadeira85 = (() => {
-  const business = {
-    productName: 'Cadeira85',
-    shopName: 'Barbearia Prime',
-    tagline: 'Agendamento simples. Agenda cheia.',
+window.C85 = {
+  business: {
+    name: 'Barbearia Prime',
     address: 'Av. Exemplo, 120 — Fortaleza, CE',
-    whatsapp: '(85) 99999-9999',
-    openingHours: 'Seg–Sáb • 09:00–20:00'
-  };
-
-  const services = [
-    { id: 'corte', name: 'Corte', duration: 40, price: 35, description: 'Corte personalizado e finalização.' },
-    { id: 'barba', name: 'Barba', duration: 30, price: 25, description: 'Desenho, acabamento e toalha quente.' },
-    { id: 'combo', name: 'Corte + Barba', duration: 60, price: 55, description: 'Pacote completo para sair renovado.' },
-    { id: 'sobrancelha', name: 'Sobrancelha', duration: 15, price: 15, description: 'Acabamento rápido e preciso.' }
-  ];
-
-  const barbers = [
-    { id: 'lucas', name: 'Lucas Silva', initials: 'LS', specialty: 'Degradê e social' },
-    { id: 'rafael', name: 'Rafael Costa', initials: 'RC', specialty: 'Barba e navalha' },
-    { id: 'marcos', name: 'Marcos Lima', initials: 'ML', specialty: 'Cachos e freestyle' }
-  ];
-
-  const slots = ['09:00','09:40','10:20','11:00','11:40','13:00','13:40','14:20','15:00','15:40','16:20','17:00','17:40','18:20','19:00','19:40'];
-  const STORAGE_KEY = 'cadeira85_bookings_v2';
-
-  const isoDate = (date) => {
-    const y = date.getFullYear();
-    const m = String(date.getMonth() + 1).padStart(2, '0');
-    const d = String(date.getDate()).padStart(2, '0');
-    return `${y}-${m}-${d}`;
-  };
-
-  const addDays = (days) => {
-    const date = new Date();
-    date.setHours(12,0,0,0);
-    date.setDate(date.getDate() + days);
-    return date;
-  };
-
-  const seed = () => {
-    const current = localStorage.getItem(STORAGE_KEY);
-    if (current) return;
-    const demo = [
-      { id: crypto.randomUUID?.() || `seed-${Date.now()}-1`, customer: 'André', phone: '(85) 98888-1001', serviceId: 'corte', barberId: 'lucas', date: isoDate(addDays(0)), time: '10:20', status: 'confirmado', createdAt: new Date().toISOString() },
-      { id: crypto.randomUUID?.() || `seed-${Date.now()}-2`, customer: 'Bruno', phone: '(85) 98888-1002', serviceId: 'combo', barberId: 'rafael', date: isoDate(addDays(0)), time: '13:40', status: 'confirmado', createdAt: new Date().toISOString() },
-      { id: crypto.randomUUID?.() || `seed-${Date.now()}-3`, customer: 'Carlos', phone: '(85) 98888-1003', serviceId: 'barba', barberId: 'marcos', date: isoDate(addDays(0)), time: '17:00', status: 'pendente', createdAt: new Date().toISOString() },
-      { id: crypto.randomUUID?.() || `seed-${Date.now()}-4`, customer: 'Diego', phone: '(85) 98888-1004', serviceId: 'corte', barberId: 'lucas', date: isoDate(addDays(1)), time: '15:00', status: 'confirmado', createdAt: new Date().toISOString() }
-    ];
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(demo));
-  };
-
-  const getBookings = () => {
-    seed();
-    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
-    catch { return []; }
-  };
-
-  const saveBookings = (bookings) => localStorage.setItem(STORAGE_KEY, JSON.stringify(bookings));
-  const addBooking = (booking) => {
-    const all = getBookings();
-    all.push({ ...booking, id: crypto.randomUUID?.() || `b-${Date.now()}`, createdAt: new Date().toISOString() });
-    saveBookings(all);
-    return all.at(-1);
-  };
-  const updateBooking = (id, patch) => {
-    const all = getBookings().map(item => item.id === id ? { ...item, ...patch } : item);
-    saveBookings(all);
-    return all;
-  };
-  const resetDemo = () => { localStorage.removeItem(STORAGE_KEY); seed(); };
-  const money = (value) => new Intl.NumberFormat('pt-BR', { style:'currency', currency:'BRL' }).format(value);
-  const serviceById = id => services.find(s => s.id === id);
-  const barberById = id => barbers.find(b => b.id === id);
-
-  return { business, services, barbers, slots, isoDate, addDays, getBookings, addBooking, updateBooking, resetDemo, money, serviceById, barberById };
-})();
+    hours: 'Seg–Sáb, 09:00–20:00'
+  },
+  services: [
+    {id:'corte', name:'Corte', duration:40, price:35},
+    {id:'barba', name:'Barba', duration:30, price:25},
+    {id:'combo', name:'Corte + Barba', duration:60, price:55},
+    {id:'pezinho', name:'Acabamento / pezinho', duration:20, price:18}
+  ],
+  barbers: [
+    {id:'lucas', name:'Lucas Silva', specialty:'Cortes clássicos', initials:'LS'},
+    {id:'rafael', name:'Rafael Costa', specialty:'Fade e freestyle', initials:'RC'},
+    {id:'marcos', name:'Marcos Lima', specialty:'Barba e acabamento', initials:'ML'}
+  ],
+  times: ['09:00','09:40','10:20','11:00','11:40','13:00','13:40','14:20','15:00','15:40','16:20','17:00','17:40','18:20','19:00'],
+  storageKey: 'cadeira85_bookings_v3',
+  currency(value){return new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(value)},
+  isoDate(date){return date.toISOString().slice(0,10)},
+  formatDate(iso){return new Date(iso+'T12:00:00').toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})},
+  getBookings(){try{return JSON.parse(localStorage.getItem(this.storageKey)||'[]')}catch{return []}},
+  setBookings(list){localStorage.setItem(this.storageKey,JSON.stringify(list))},
+  seed(){
+    if(localStorage.getItem(this.storageKey)) return;
+    const today=this.isoDate(new Date());
+    this.setBookings([
+      {id:'seed1',date:today,time:'14:20',customer:'João',phone:'(85) 99911-2233',serviceId:'corte',barberId:'lucas',price:35,status:'confirmed',paymentMethod:'pix',paymentStatus:'signal_paid',paidAmount:10.5,createdAt:Date.now()-50000},
+      {id:'seed2',date:today,time:'15:00',customer:'Mateus',phone:'(85) 99933-4455',serviceId:'combo',barberId:'rafael',price:55,status:'confirmed',paymentMethod:'card',paymentStatus:'paid',paidAmount:55,createdAt:Date.now()-40000},
+      {id:'seed3',date:today,time:'15:40',customer:'Pedro',phone:'(85) 99955-6677',serviceId:'barba',barberId:'marcos',price:25,status:'pending',paymentMethod:'local',paymentStatus:'local',paidAmount:0,createdAt:Date.now()-30000}
+    ])
+  }
+};
+window.C85.seed();
