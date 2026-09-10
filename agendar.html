@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0d10"><title>Agendar — Barbearia Prime</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <div class="demo-banner">Demonstração interativa — nenhum atendimento real será reservado.</div>
+  <nav class="topbar container"><a class="brand" href="index.html"><span class="brand-mark">BP</span><span>Barbearia Prime</span></a><div class="nav-actions"><a class="btn btn-secondary" href="painel.html">Painel da barbearia</a></div></nav>
+  <header class="page-head container"><span class="eyebrow">AGENDAMENTO ONLINE</span><h1>Escolha seu horário</h1><p>Av. Exemplo, 120 — Fortaleza, CE • Seg–Sáb, 09:00–20:00</p></header>
+  <main class="container booking-layout">
+    <section class="panel">
+      <div class="booking-step"><div class="step-title"><b>1</b><h2>Serviço</h2></div><div class="choice-grid" id="serviceGrid"></div></div>
+      <div class="booking-step"><div class="step-title"><b>2</b><h2>Profissional</h2></div><div class="barber-grid" id="barberGrid"></div></div>
+      <div class="booking-step"><div class="step-title"><b>3</b><h2>Data</h2></div><div class="date-grid" id="dateGrid"></div></div>
+      <div class="booking-step"><div class="step-title"><b>4</b><h2>Horário</h2></div><div class="time-grid" id="timeGrid"></div></div>
+      <div class="booking-step"><div class="step-title"><b>5</b><h2>Seus dados</h2></div><div class="input-grid"><div class="field"><label for="customerName">Nome</label><input id="customerName" placeholder="Ex.: João Pedro" autocomplete="name"></div><div class="field"><label for="customerPhone">WhatsApp</label><input id="customerPhone" placeholder="(85) 99999-9999" inputmode="tel" autocomplete="tel"></div></div></div>
+    </section>
+    <aside class="summary"><span class="eyebrow">RESUMO</span><h2>Seu agendamento</h2>
+      <div class="summary-row"><span>Serviço</span><strong id="sumService">—</strong></div><div class="summary-row"><span>Profissional</span><strong id="sumBarber">—</strong></div><div class="summary-row"><span>Data</span><strong id="sumDate">—</strong></div><div class="summary-row"><span>Horário</span><strong id="sumTime">—</strong></div><div class="summary-row summary-total"><span>Total</span><strong id="sumPrice">R$ 0,00</strong></div>
+      <button id="confirmBtn" class="btn btn-primary" style="width:100%;margin-top:16px" disabled>Confirmar horário</button><p class="summary-note">Na versão real, a barbearia receberia a reserva e poderia enviar confirmação pelo WhatsApp.</p>
+    </aside>
+  </main>
+  <div id="modal" class="modal-backdrop" hidden><div class="modal"><div class="success-icon">✓</div><h2>Agendamento criado</h2><p id="modalText"></p><div class="modal-actions"><a class="btn btn-primary" href="painel.html">Ver no painel da barbearia</a><button class="btn btn-secondary" id="closeModal">Fechar</button></div></div></div>
+  <script src="config.js"></script><script src="booking.js"></script>
+</body></html>

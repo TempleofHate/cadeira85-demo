@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0d10"><title>Painel — Cadeira85</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="admin-shell">
+  <aside class="sidebar"><a class="brand" href="index.html"><span class="brand-mark">C85</span><span>Cadeira85</span></a><nav class="side-nav"><a class="side-link active" href="#">Visão geral</a><a class="side-link" href="#agenda">Agenda</a><a class="side-link" href="#">Clientes</a><a class="side-link" href="#">Serviços</a><a class="side-link" href="#">Profissionais</a></nav></aside>
+  <main class="admin-main">
+    <div class="demo-banner" style="margin:-28px -28px 25px">Painel demonstrativo — as alterações ficam somente neste navegador.</div>
+    <header class="admin-top"><div><h1>Boa tarde, Barbearia Prime 👋</h1><p id="todayLabel"></p></div><div class="nav-actions"><button class="btn btn-secondary" id="resetBtn">Resetar demo</button><a class="btn btn-primary" href="agendar.html">+ Novo agendamento</a></div></header>
+    <section class="kpi-grid"><div class="kpi"><span>Agendamentos hoje</span><strong id="kpiBookings">0</strong><small id="kpiPending">0 pendentes</small></div><div class="kpi"><span>Receita prevista</span><strong id="kpiRevenue">R$ 0</strong><small>serviços não cancelados</small></div><div class="kpi"><span>Ocupação</span><strong id="kpiOccupancy">0%</strong><small>da agenda de hoje</small></div><div class="kpi"><span>Ticket médio</span><strong id="kpiTicket">R$ 0</strong><small>por atendimento</small></div></section>
+    <section class="admin-grid" id="agenda">
+      <article class="admin-card"><div class="card-head"><div><span class="eyebrow">AGENDA</span><h2>Próximos horários</h2></div><a class="btn btn-secondary btn-small" href="agendar.html">Simular cliente</a></div><div class="table-wrap"><table><thead><tr><th>Data</th><th>Hora</th><th>Cliente</th><th>Serviço</th><th>Profissional</th><th>Status</th><th>Ações</th></tr></thead><tbody id="bookingRows"></tbody></table></div></article>
+      <aside class="admin-card"><div class="card-head"><div><span class="eyebrow">HOJE</span><h2>Linha do tempo</h2></div></div><div class="timeline" id="timeline"></div></aside>
+    </section>
+  </main>
+</div><div class="toast" id="toast" hidden></div><script src="config.js"></script><script src="admin.js"></script></body></html>
