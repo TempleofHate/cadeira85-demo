@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11T16:04:27.427888+00:00",
+  "title": "Design System: Cadeira85",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.01211 96.42)",
+          "oklch(26% 0.01211 96.42)",
+          "oklch(38% 0.01211 96.42)",
+          "oklch(49% 0.01211 96.42)",
+          "oklch(61% 0.01211 96.42)",
+          "oklch(72% 0.01211 96.42)",
+          "oklch(84% 0.01211 96.42)",
+          "oklch(95% 0.01211 96.42)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15% 0.00666 97.35)",
+          "oklch(26% 0.00666 97.35)",
+          "oklch(38% 0.00666 97.35)",
+          "oklch(49% 0.00666 97.35)",
+          "oklch(61% 0.00666 97.35)",
+          "oklch(72% 0.00666 97.35)",
+          "oklch(84% 0.00666 97.35)",
+          "oklch(95% 0.00666 97.35)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.03431 171.88)",
+          "oklch(26% 0.03431 171.88)",
+          "oklch(38% 0.03431 171.88)",
+          "oklch(49% 0.03431 171.88)",
+          "oklch(61% 0.03431 171.88)",
+          "oklch(72% 0.03431 171.88)",
+          "oklch(84% 0.03431 171.88)",
+          "oklch(95% 0.03431 171.88)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.02321 154.40)",
+          "oklch(26% 0.02321 154.40)",
+          "oklch(38% 0.02321 154.40)",
+          "oklch(49% 0.02321 154.40)",
+          "oklch(61% 0.02321 154.40)",
+          "oklch(72% 0.02321 154.40)",
+          "oklch(84% 0.02321 154.40)",
+          "oklch(95% 0.02321 154.40)"
+        ]
+      },
+      "green": {
+        "role": "primary",
+        "displayName": "Green",
+        "tonalRamp": [
+          "oklch(15% 0.04717 175.82)",
+          "oklch(26% 0.04717 175.82)",
+          "oklch(38% 0.04717 175.82)",
+          "oklch(49% 0.04717 175.82)",
+          "oklch(61% 0.04717 175.82)",
+          "oklch(72% 0.04717 175.82)",
+          "oklch(84% 0.04717 175.82)",
+          "oklch(95% 0.04717 175.82)"
+        ]
+      },
+      "green-hover": {
+        "role": "primary",
+        "displayName": "Green Hover",
+        "tonalRamp": [
+          "oklch(15% 0.05492 174.19)",
+          "oklch(26% 0.05492 174.19)",
+          "oklch(38% 0.05492 174.19)",
+          "oklch(49% 0.05492 174.19)",
+          "oklch(61% 0.05492 174.19)",
+          "oklch(72% 0.05492 174.19)",
+          "oklch(84% 0.05492 174.19)",
+          "oklch(95% 0.05492 174.19)"
+        ]
+      },
+      "soft-green": {
+        "role": "primary",
+        "displayName": "Soft Green",
+        "tonalRamp": [
+          "oklch(15% 0.01813 134.92)",
+          "oklch(26% 0.01813 134.92)",
+          "oklch(38% 0.01813 134.92)",
+          "oklch(49% 0.01813 134.92)",
+          "oklch(61% 0.01813 134.92)",
+          "oklch(72% 0.01813 134.92)",
+          "oklch(84% 0.01813 134.92)",
+          "oklch(95% 0.01813 134.92)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.01678 121.80)",
+          "oklch(26% 0.01678 121.80)",
+          "oklch(38% 0.01678 121.80)",
+          "oklch(49% 0.01678 121.80)",
+          "oklch(61% 0.01678 121.80)",
+          "oklch(72% 0.01678 121.80)",
+          "oklch(84% 0.01678 121.80)",
+          "oklch(95% 0.01678 121.80)"
+        ]
+      },
+      "lime": {
+        "role": "primary",
+        "displayName": "Lime",
+        "tonalRamp": [
+          "oklch(15% 0.09185 118.09)",
+          "oklch(26% 0.09185 118.09)",
+          "oklch(38% 0.09185 118.09)",
+          "oklch(49% 0.09185 118.09)",
+          "oklch(61% 0.09185 118.09)",
+          "oklch(72% 0.09185 118.09)",
+          "oklch(84% 0.09185 118.09)",
+          "oklch(95% 0.09185 118.09)"
+        ]
+      },
+      "rust": {
+        "role": "neutral",
+        "displayName": "Rust",
+        "tonalRamp": [
+          "oklch(15% 0.10511 42.07)",
+          "oklch(26% 0.10511 42.07)",
+          "oklch(38% 0.10511 42.07)",
+          "oklch(49% 0.10511 42.07)",
+          "oklch(61% 0.10511 42.07)",
+          "oklch(72% 0.10511 42.07)",
+          "oklch(84% 0.10511 42.07)",
+          "oklch(95% 0.10511 42.07)"
+        ]
+      },
+      "warning-bg": {
+        "role": "neutral",
+        "displayName": "Warning Bg",
+        "tonalRamp": [
+          "oklch(15% 0.04028 83.13)",
+          "oklch(26% 0.04028 83.13)",
+          "oklch(38% 0.04028 83.13)",
+          "oklch(49% 0.04028 83.13)",
+          "oklch(61% 0.04028 83.13)",
+          "oklch(72% 0.04028 83.13)",
+          "oklch(84% 0.04028 83.13)",
+          "oklch(95% 0.04028 83.13)"
+        ]
+      },
+      "danger": {
+        "role": "neutral",
+        "displayName": "Danger",
+        "tonalRamp": [
+          "oklch(15% 0.14903 24.71)",
+          "oklch(26% 0.14903 24.71)",
+          "oklch(38% 0.14903 24.71)",
+          "oklch(49% 0.14903 24.71)",
+          "oklch(61% 0.14903 24.71)",
+          "oklch(72% 0.14903 24.71)",
+          "oklch(84% 0.14903 24.71)",
+          "oklch(95% 0.14903 24.71)"
+        ]
+      },
+      "danger-bg": {
+        "role": "neutral",
+        "displayName": "Danger Bg",
+        "tonalRamp": [
+          "oklch(15% 0.02043 32.53)",
+          "oklch(26% 0.02043 32.53)",
+          "oklch(38% 0.02043 32.53)",
+          "oklch(49% 0.02043 32.53)",
+          "oklch(61% 0.02043 32.53)",
+          "oklch(72% 0.02043 32.53)",
+          "oklch(84% 0.02043 32.53)",
+          "oklch(95% 0.02043 32.53)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.00666 97.35)",
+          "oklch(26% 0.00666 97.35)",
+          "oklch(38% 0.00666 97.35)",
+          "oklch(49% 0.00666 97.35)",
+          "oklch(61% 0.00666 97.35)",
+          "oklch(72% 0.00666 97.35)",
+          "oklch(84% 0.00666 97.35)",
+          "oklch(95% 0.00666 97.35)"
+        ]
+      },
+      "warning-ink": {
+        "role": "neutral",
+        "displayName": "Warning Ink",
+        "tonalRamp": [
+          "oklch(15% 0.09484 61.27)",
+          "oklch(26% 0.09484 61.27)",
+          "oklch(38% 0.09484 61.27)",
+          "oklch(49% 0.09484 61.27)",
+          "oklch(61% 0.09484 61.27)",
+          "oklch(72% 0.09484 61.27)",
+          "oklch(84% 0.09484 61.27)",
+          "oklch(95% 0.09484 61.27)"
+        ]
+      },
+      "completed-bg": {
+        "role": "neutral",
+        "displayName": "Completed Bg",
+        "tonalRamp": [
+          "oklch(15% 0.00955 119.58)",
+          "oklch(26% 0.00955 119.58)",
+          "oklch(38% 0.00955 119.58)",
+          "oklch(49% 0.00955 119.58)",
+          "oklch(61% 0.00955 119.58)",
+          "oklch(72% 0.00955 119.58)",
+          "oklch(84% 0.00955 119.58)",
+          "oklch(95% 0.00955 119.58)"
+        ]
+      },
+      "completed-ink": {
+        "role": "neutral",
+        "displayName": "Completed Ink",
+        "tonalRamp": [
+          "oklch(15% 0.02607 149.23)",
+          "oklch(26% 0.02607 149.23)",
+          "oklch(38% 0.02607 149.23)",
+          "oklch(49% 0.02607 149.23)",
+          "oklch(61% 0.02607 149.23)",
+          "oklch(72% 0.02607 149.23)",
+          "oklch(84% 0.02607 149.23)",
+          "oklch(95% 0.02607 149.23)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Promessa da landing."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Título da página."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de seção."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto corrente."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Rótulos dos campos."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Informações auxiliares."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow",
+        "value": "0 18px 50px #173e3515",
+        "purpose": "Prévia da agenda, toast e diálogo."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Transições de botões e escolhas."
+      },
+      {
+        "name": "interaction-duration",
+        "value": ".18s",
+        "purpose": "Transições de cor, borda e deslocamento."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-max",
+        "value": "760px"
+      },
+      {
+        "name": "compact-max",
+        "value": "1000px"
+      },
+      {
+        "name": "wide-min",
+        "value": "1500px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão primary",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Continuar",
+      "html": "<button class=\"ds-button-primary\">Continuar</button>",
+      "css": ".ds-button-primary{font-family:var(--font-body,Manrope,sans-serif);color:var(--ink,#233c34);display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:50px;padding:13px 21px;border:0;border-radius:var(--small-radius,8px);font-size:.875rem;font-weight:750;line-height:1.5;cursor:pointer;transition:background-color .18s var(--ease,cubic-bezier(.16,1,.3,1)),transform .18s var(--ease,cubic-bezier(.16,1,.3,1));background:var(--green,#173e35);color:var(--white,#fffef9);}.ds-button-primary:hover{background:var(--green-hover,#265448)}.ds-button-primary:focus-visible{outline:3px solid var(--rust,#8e472a);outline-offset:4px}.ds-button-primary:active{transform:translateY(1px)}.ds-button-primary:disabled{background:var(--line,#d4d8cc);color:var(--muted,#59675d);cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none}.ds-button-primary:active{transform:none}}"
+    },
+    {
+      "name": "Botão secondary",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Voltar",
+      "html": "<button class=\"ds-button-secondary\">Voltar</button>",
+      "css": ".ds-button-secondary{font-family:var(--font-body,Manrope,sans-serif);color:var(--ink,#233c34);display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:50px;padding:13px 21px;border:0;border-radius:var(--small-radius,8px);font-size:.875rem;font-weight:750;line-height:1.5;cursor:pointer;transition:background-color .18s var(--ease,cubic-bezier(.16,1,.3,1)),transform .18s var(--ease,cubic-bezier(.16,1,.3,1));background:transparent;color:var(--ink,#233c34);border:1px solid var(--line,#d4d8cc);}.ds-button-secondary:hover{background:var(--soft-green,#e2eade)}.ds-button-secondary:focus-visible{outline:3px solid var(--rust,#8e472a);outline-offset:4px}.ds-button-secondary:active{transform:translateY(1px)}.ds-button-secondary:disabled{background:var(--line,#d4d8cc);color:var(--muted,#59675d);cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button-secondary{transition:none}.ds-button-secondary:active{transform:none}}"
+    },
+    {
+      "name": "Botão danger",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Confirmar cancelamento",
+      "html": "<button class=\"ds-button-danger\">Confirmar cancelamento</button>",
+      "css": ".ds-button-danger{font-family:var(--font-body,Manrope,sans-serif);color:var(--ink,#233c34);display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:50px;padding:13px 21px;border:0;border-radius:var(--small-radius,8px);font-size:.875rem;font-weight:750;line-height:1.5;cursor:pointer;transition:background-color .18s var(--ease,cubic-bezier(.16,1,.3,1)),transform .18s var(--ease,cubic-bezier(.16,1,.3,1));background:var(--danger,#a13030);color:var(--white,#fffef9);}.ds-button-danger:focus-visible{outline:3px solid var(--rust,#8e472a);outline-offset:4px}.ds-button-danger:active{transform:translateY(1px)}.ds-button-danger:disabled{background:var(--line,#d4d8cc);color:var(--muted,#59675d);cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button-danger{transition:none}.ds-button-danger:active{transform:none}}"
+    },
+    {
+      "name": "Campo com rótulo",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo com rótulo",
+      "html": "<label class=\"ds-field\">Seu nome<input placeholder=\"Como você se chama?\"></label>",
+      "css": ".ds-field{font-family:var(--font-body,Manrope,sans-serif);color:var(--ink,#233c34);display:grid;gap:8px;font-size:.8125rem;font-weight:750}.ds-field input{font:400 16px/1.6 Manrope,sans-serif;min-height:50px;padding:12px 14px;border:1px solid var(--line,#d4d8cc);border-radius:var(--small-radius,8px);background:var(--surface,#fffef9);color:var(--ink,#233c34)}.ds-field input::placeholder{color:var(--muted,#59675d)}.ds-field input[aria-invalid=true]{border-color:var(--danger,#a13030)}.ds-field input:focus-visible{outline:3px solid var(--rust,#8e472a);outline-offset:4px}"
+    },
+    {
+      "name": "Navegação",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Navegação",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navegação\"><a class=\"ds-brand\" href=\"#\">Cadeira<span>85</span></a><a class=\"ds-link\" href=\"#\">Ver painel</a></nav>",
+      "css": ".ds-nav{font-family:var(--font-body,Manrope,sans-serif);color:var(--ink,#233c34);display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:94px;border-bottom:1px solid var(--line,#d4d8cc)}.ds-brand{font-size:1.5rem;font-weight:800;letter-spacing:-.04em}.ds-brand span{font-weight:500}.ds-nav a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}.ds-link{font-size:.875rem;font-weight:700}.ds-link:hover{text-decoration:underline;text-underline-offset:5px}.ds-nav a:focus-visible{outline:3px solid var(--rust,#8e472a);outline-offset:4px}@media(max-width:760px){.ds-nav{min-height:76px}.ds-brand{font-size:1.25rem}}"
+    },
+    {
+      "name": "Status confirmado",
+      "kind": "chip",
+      "refersTo": "badge-confirmed",
+      "description": "Status confirmado",
+      "html": "<span class=\"ds-badge\">Confirmado</span>",
+      "css": ".ds-badge{font-family:var(--font-body,Manrope,sans-serif);color:var(--ink,#233c34);display:inline-flex;gap:5px;border-radius:5px;padding:4px 8px;line-height:1.5;font-size:.75rem;font-weight:700;white-space:nowrap;background:var(--soft-green,#e2eade);color:var(--green,#173e35)}"
+    },
+    {
+      "name": "Ficha de agendamento",
+      "kind": "card",
+      "refersTo": "booking-sheet",
+      "description": "Ficha de agendamento",
+      "html": "<section class=\"ds-sheet\"><h2>Escolha o serviço</h2><p>Selecione o que você quer fazer hoje.</p></section>",
+      "css": ".ds-sheet{font-family:var(--font-body,Manrope,sans-serif);color:var(--ink,#233c34);background:var(--surface,#fffef9);border:1px solid var(--line,#d4d8cc);border-radius:var(--radius,14px);padding:28px}.ds-sheet h2{font-size:1.75rem;line-height:1.16;letter-spacing:-.03em;margin:0}.ds-sheet p{font-size:.8125rem;color:var(--muted,#59675d);margin:12px 0 0}@media(max-width:760px){.ds-sheet{padding:24px 20px}.ds-sheet h2{font-size:1.5rem}}"
+    },
+    {
+      "name": "Escolha de serviço",
+      "kind": "custom",
+      "refersTo": "choice",
+      "description": "Escolha de serviço",
+      "html": "<button class=\"ds-choice\" aria-pressed=\"true\"><span class=\"ds-main\"><strong>Corte</strong><small>40 minutos</small></span><span class=\"ds-price\">R$ 40</span></button>",
+      "css": ".ds-choice{font-family:var(--font-body,Manrope,sans-serif);color:var(--ink,#233c34);display:flex;align-items:center;gap:16px;text-align:left;padding:20px;border:1px solid var(--line,#d4d8cc);border-radius:var(--small-radius,8px);background:var(--surface,#fffef9);width:100%;min-height:90px;cursor:pointer;transition:background-color .18s var(--ease,cubic-bezier(.16,1,.3,1)),border-color .18s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-choice:hover{background:var(--paper,#f4f2e9);border-color:var(--muted,#59675d)}.ds-choice[aria-pressed=true]{border-color:var(--green,#173e35);background:var(--soft-green,#e2eade)}.ds-main{flex:1}.ds-main strong{display:block;font-size:.9375rem}.ds-main small{display:block;font-size:.75rem;color:var(--muted,#59675d);margin-top:4px}.ds-price{font-size:.9375rem;font-weight:800;white-space:nowrap}.ds-choice:after{content:\"\";width:19px;height:19px;box-sizing:border-box;border:1px solid var(--muted,#59675d);border-radius:50%;margin-left:auto}.ds-choice[aria-pressed=true]:after{border:6px solid var(--green,#173e35);background:var(--white,#fffef9)}.ds-choice:focus-visible{outline:3px solid var(--rust,#8e472a);outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-choice{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A agenda aberta",
+    "overview": "Cadeira85 combina papel quente, tinta verde profunda e Manrope para uma experiência premium, moderna, prática, elegante e acolhedora. A agenda é o principal elemento visual: horários, clientes e pagamentos dão identidade ao produto.\n\nO espaço permite ler e decidir com calma; linhas e superfícies organizam a operação. A marca do software permanece distinta da Barbearia Horizonte, estabelecimento fictício da demonstração. A direção vem do briefing e da implementação, sem comp visual externo.",
+    "keyCharacteristics": [
+      "Papel quente e verde profundo.",
+      "Tipografia local, hierarquia clara e números tabulares.",
+      "Reservas em etapas; agenda em linhas responsivas.",
+      "Estados com texto, foco visível e movimento discreto."
+    ],
+    "rules": [],
+    "dos": [
+      "Do reutilizar os tokens de styles.css e os raios de 8px e 14px.",
+      "Do manter rótulos em português brasileiro e identificar pagamentos simulados.",
+      "Do conservar foco de 3px, alvos confortáveis e estados descritos em texto.",
+      "Do adaptar a agenda a linhas no celular e manter preços e horários legíveis."
+    ],
+    "donts": [
+      "Don't usar preto e dourado, clichês de barbearia ou aparência de template SaaS.",
+      "Don't transformar cada informação em um cartão elevado.",
+      "Don't usar apenas cor para distinguir pagamento, cancelamento ou seleção.",
+      "Don't apresentar clientes fictícios como prova social real."
+    ]
+  }
+}
