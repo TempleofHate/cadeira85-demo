@@ -23,7 +23,7 @@ function render(){
 }
 async function act(event){
   const button=event.target.closest('button');if(!button)return;
-  if(button.id==='clearFilters'){$('#dateFilter').value='all';$('#barberFilter').value='all';$('#statusFilter').value='all';safeRender();return;}
+  if(button.id==='clearFilters'){$('#dateFilter').value='all';$('#barberFilter').value='all';$('#statusFilter').value='all';safeRender();$('#dateFilter').focus({preventScroll:true});return;}
   const {id,action}=button.dataset;if(!id)return;
   try{
     if(action==='cancelled'){

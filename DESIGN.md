@@ -128,6 +128,8 @@ O espaço permite ler e decidir com calma; linhas e superfícies organizam a ope
 
 Verde profundo sobre papel quente sustenta a identidade. Os valores normativos estão no frontmatter; os nomes preservam os custom properties existentes.
 
+Exceção local preservada na revisão: `#d5e2d7` em `.preview-heading p` é texto auxiliar sobre verde profundo, com matiz da superfície. Não representa outra cor de marca nem exige um token compartilhado para uma única aplicação.
+
 ### Primary
 
 `green` é a tinta de ação e seleção; `green-hover` é seu hover. `soft-green` acolhe confirmações e escolhas selecionadas. `lime` acentua a área comercial e disponibilidade na prévia.
@@ -169,7 +171,7 @@ Superfícies maiores usam raio de 14px; botões, campos e escolhas usam 8px. Bad
 - **Navegação:** marca de peso 800 com sufixo 85 de peso 500, links de 44px mínimos; barra de 94px reduzida a 76px no celular.
 - **Badges:** estado por texto e fundo semântico, tamanho .75rem, peso 700, padding 4px 8px. Permanecem compactos e quebram em conjunto dentro da linha de reserva.
 - **Ficha e escolhas:** ficha de 14px com padding 28px; escolhas de 8px com mínimo de 90px (84px no celular). Seleção combina `aria-pressed`, fundo verde suave e indicador circular marcado.
-- **Progresso e resumo:** segmentos de 4px mostram etapas; contagem e título explicam a etapa atual. O resumo usa detalhes expansíveis e linhas de valores com total destacado.
+- **Progresso e resumo:** segmentos de 4px mostram etapas; contagem e título explicam a etapa atual. O resumo usa detalhes expansíveis; o total aparece após selecionar o serviço e a decomposição dos valores na etapa de pagamento.
 - **Agenda do proprietário:** linhas com divisórias, números tabulares, badges e ações explícitas. Cancelamento acrescenta texto riscado; operações destrutivas passam pelo diálogo.
 
 Foco global: outline de 3px em `rust`, offset 4px. Botões e escolhas transitam em .18s com `cubic-bezier(.16,1,.3,1)`. Movimento reduzido remove essas transições e o deslocamento active. Os snippets no sidecar são amostras visuais isoladas; o comportamento de reserva depende do JavaScript da aplicação.

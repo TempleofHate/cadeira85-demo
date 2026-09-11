@@ -5,6 +5,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const base = process.env.DEMO_URL || 'http://127.0.0.1:8080/cadeira85-demo-v2/';
 const out = '.impeccable/review';
+fs.mkdirSync(out, { recursive: true });
 const results={journeys:[],responsive:[],accessibility:[],errors:[],assets:[],extra:[]};
 (async()=>{
  const browser=await chromium.launch({headless:true});
@@ -20,6 +21,7 @@ const results={journeys:[],responsive:[],accessibility:[],errors:[],assets:[],ex
  async function book(method,name){
   await page.goto(base);
   await page.getByRole('link',{name:'Testar agendamento',exact:true}).click();
+  assert.doesNotMatch(await page.locator('#summaryContent').textContent(),/R\$|Pix/);
   await page.locator('[data-service="combo"]').click();await page.locator('#nextBtn').click();
   await page.locator('[data-barber="lucas"]').click();await page.locator('#nextBtn').click();
   await page.locator('[data-date]:not(:disabled)').first().click();await page.locator('#nextBtn').click();
@@ -31,6 +33,7 @@ const results={journeys:[],responsive:[],accessibility:[],errors:[],assets:[],ex
   }
   await page.locator('#customerName').fill(name);await page.locator('#customerPhone').fill('(85) 99999-1234');await page.locator('#nextBtn').click();
   await page.locator(`[data-payment="${method}"]`).click();
+  assert.match(await page.locator('#summaryContent').textContent(),/Valor a pagar agora/);
   if(method==='pix'){
    await page.locator('#copyPix').click();await page.locator('#toast').waitFor({state:'visible'});assert.match(await page.locator('#toast').innerText(),/copiado/);
    assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),'DEMONSTRACAO-CADEIRA85-SEM-VALOR-NAO-E-UM-PIX');
@@ -61,7 +64,7 @@ const results={journeys:[],responsive:[],accessibility:[],errors:[],assets:[],ex
  await toSlots();assert.ok(await page.locator(`[data-time="${pix.time}"]`).isEnabled());results.journeys.push('E: cancelar libera disponibilidade e atualiza receita');
  await page.reload();const bookings=await storage();assert.equal(bookings.find(b=>b.id===pix.id).status,'cancelled');assert.equal(bookings.find(b=>b.id===card.id).paidAmount,55);results.journeys.push('F: reload preserva reservas, cancelamento e pagamentos');
  await page.goto(base+'painel.html');await page.locator('[data-action="confirmed"]').first().click();await page.locator(`#booking-${card.id} [data-action="completed"]`).click();await page.waitForFunction(id=>JSON.parse(localStorage.getItem('cadeira85_demo_v4')).bookings.find(b=>b.id===id).status==='completed',card.id);assert.equal((await storage()).find(b=>b.id===card.id).status,'completed');results.extra.push('Confirmar e concluir, sem cobrança implícita do saldo');
- await page.locator('#dateFilter').selectOption('all');await page.locator('#statusFilter').selectOption('cancelled');await page.locator('#barberFilter').selectOption('rafael');assert.match(await page.locator('#appointments').innerText(),/Nenhum agendamento/);await page.locator('#clearFilters').click();results.extra.push('Estado vazio e limpeza de filtros');
+ await page.locator('#dateFilter').selectOption('all');await page.locator('#statusFilter').selectOption('cancelled');await page.locator('#barberFilter').selectOption('rafael');assert.match(await page.locator('#appointments').innerText(),/Nenhum agendamento/);await page.locator('#clearFilters').focus();await page.keyboard.press('Enter');assert.equal(await page.evaluate(()=>document.activeElement.id),'dateFilter');results.extra.push('Estado vazio e limpeza de filtros com recuperação de foco');
  await page.locator('#resetBtn').click();await page.locator('#dialogCancel').click();assert.ok((await storage()).some(b=>!b.seed));
  await page.locator('#resetBtn').click();await page.locator('#dialogAccept').click();await page.waitForFunction(()=>JSON.parse(localStorage.getItem('cadeira85_demo_v4')).bookings.every(b=>b.seed));results.journeys.push('G: restauração com confirmação retorna aos dados iniciais');
  for(const width of [360,390,430,768,1440]){
@@ -104,7 +107,7 @@ const results={journeys:[],responsive:[],accessibility:[],errors:[],assets:[],ex
  await page.clock.setFixedTime(new Date('2027-01-03T14:00:00Z'));await page.goto(base+'agendar.html');await page.locator('[data-service="corte"]').click();await page.locator('#nextBtn').click();await page.locator('[data-barber="lucas"]').click();await page.locator('#nextBtn').click();assert.ok(await page.locator('[data-date="2027-01-03"]').isDisabled());assert.ok(await page.locator('[data-date="2027-01-04"]').isEnabled());results.extra.push('Datas dinâmicas em janeiro de 2027 e domingo indisponível');
  await page.goto(base+'painel.html');assert.equal(await page.locator('#dateFilter').inputValue(),'tomorrow');
  assert.ok((await storage()).filter(b=>b.seed).every(b=>new Date(b.date+'T12:00:00').getDay()!==0));results.extra.push('Exemplos atualizados em nova data, domingo sem reservas fictícias');
- const denied=await context.newPage();await denied.addInitScript(()=>{Storage.prototype.setItem=function(){throw new DOMException('Blocked','QuotaExceededError')}});await denied.goto(base+'agendar.html');await denied.locator('#globalError').waitFor({state:'visible'});assert.ok(await denied.locator('#bookingExperience').isHidden());assert.match(await denied.locator('#globalError').innerText(),/armazenamento/);await denied.close();results.extra.push('Armazenamento bloqueado: erro compreensível, sem falsa confirmação');
+ const deniedContext=await browser.newContext();const denied=await deniedContext.newPage();await denied.addInitScript(()=>{Storage.prototype.setItem=function(){throw new DOMException('Blocked','QuotaExceededError')}});await denied.goto(base+'agendar.html');await denied.locator('#globalError').waitFor({state:'visible'});assert.ok(await denied.locator('#bookingExperience').isHidden());assert.match(await denied.locator('#globalError').innerText(),/armazenamento/);await deniedContext.close();results.extra.push('Armazenamento bloqueado: erro compreensível, sem falsa confirmação');
  await page.goto(base);await page.locator('#contactBtn').click();assert.ok(await page.locator('#contactNotice').isVisible());results.extra.push('Contato não configurado: placeholder explicado, sem destino inventado');
 
  assert.equal(results.errors.length,0);assert.equal(results.assets.length,0);assert.ok(results.responsive.every(r=>!r.overflow&&!r.tiny.length));assert.ok(results.accessibility.every(r=>!r.violations.length));

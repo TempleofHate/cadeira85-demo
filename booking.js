@@ -9,7 +9,7 @@ function rows(items){return '<dl class="summary-rows">'+items.map(([label,value,
 function summary(){
   const s=serviceById(state.serviceId),b=barberById(state.barberId);
   $('#summaryCompact').textContent=s?`${s.name} · ${money(s.price)}${state.time?' · '+state.time:''}`:'Escolha um serviço';
-  $('#summaryContent').innerHTML=rows([['Serviço',s?.name||'A escolher'],['Profissional',b?.name||'A escolher'],['Data',state.date?dateLabel(state.date):'A escolher'],['Horário',state.time||'A escolher'],['Forma de pagamento',paymentLabels[state.paymentMethod]],['Total',money(s?.price||0),'total'],['Valor a pagar agora',money(paidNow()),'pay-now'],['Restante na barbearia',money((s?.price||0)-paidNow())]]);
+  $('#summaryContent').innerHTML=rows([['Serviço',s?.name||'A escolher'],['Profissional',b?.name||'A escolher'],['Data',state.date?dateLabel(state.date):'A escolher'],['Horário',state.time||'A escolher'],['Forma de pagamento',step===5?paymentLabels[state.paymentMethod]:'A escolher'],...(s?[['Total',money(s.price),'total']]:[]),...(s&&step===5?[['Valor a pagar agora',money(paidNow()),'pay-now'],['Restante na barbearia',money(s.price-paidNow())]]:[])]);
 }
 function selectButton(kind,value,body,selected,extra=''){return `<button type="button" class="choice" data-${kind}="${value}" aria-pressed="${selected}" ${extra}>${body}</button>`;}
 function render(focus=true){
